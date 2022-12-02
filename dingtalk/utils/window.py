@@ -57,5 +57,5 @@ def get_screenshot(window_pos):
     t2 = str(round(time.time() * 1000))
     t = str(t1) + '_' + str(t2)
     screenshot = ImageGrab.grab(window_pos)  # 截图
-    screenshot.save(os.sep.join([str(t) + ".png"]))  # 保存截图
+    screenshot.save(os.sep.join(["Screenshot_" + str(t) + ".png"]))  # 保存截图
     return screenshot

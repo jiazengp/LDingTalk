@@ -16,3 +16,16 @@
 ![Alt](https://repobeats.axiom.co/api/embed/23c36ec9d386a2cad477f3886403476d1a39faad.svg)
 
 </div>
+
+## 功能
+
+__DingTalk__
+
+- [x] 自动进直播
+- [x] 自动签到并截图
+- [x] 自动关闭统计界面并截图
+
+__Kook__
+
+- [ ] 开播提示
+- [ ] 签到提示
