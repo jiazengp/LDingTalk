@@ -91,4 +91,4 @@ def on_update():
         # 统计检测次数
         num = num + 1
 
-        auto_check_in.start(num)
+        auto_class.start(num)

@@ -1,6 +1,6 @@
-# LDingTalk
-
 <div align="center">
+
+<h1>LDingTalk</h1>
 
 [文档](docs/index.md) |
 [GitHub](https://github.com/xyz8848) |
