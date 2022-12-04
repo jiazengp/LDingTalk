@@ -6,7 +6,7 @@ import dingtalk
 
 name = "LDingTalk"
 author = "xyz8848"
-version = "v1.0.2"
+version = "v1.1.0"
 
 if __name__ == '__main__':
     print("====================")
