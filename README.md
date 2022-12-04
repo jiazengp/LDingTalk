@@ -9,7 +9,6 @@
 [![GitHub Stars](https://img.shields.io/github/stars/xyz8848/LDingTalk)](https://github.com/xyz8848/LDingTalk/stargazers)
 [![GitHub Stars](https://img.shields.io/github/watchers/xyz8848/LDingTalk)](https://github.com/xyz8848/LDingTalk/watchers)
 [![GitHub Forks](https://img.shields.io/github/forks/xyz8848/LDingTalk)](https://github.com/xyz8848/LDingTalk/network/members)
-[![GitHub Contributors](https://img.shields.io/github/all-contributors/xyz8848/LDingTalk)](https://github.com/xyz8848/LDingTalk/graphs/contributors)
 [![Release Downloads](https://img.shields.io/github/downloads/xyz8848/LDingTalk/total)](https://github.com/xyz8848/LDingTalk/releases/latest)
 [![Release Version](https://img.shields.io/github/v/release/xyz8848/LDingTalk)](https://github.com/xyz8848/LDingTalk/releases/latest)
 
