@@ -2,17 +2,13 @@
 # GitHub: https://github.com/xyz8848
 # Copyright (c) 2022-2023 xyz8848. All rights reserved.
 
+import config
 import datetime
 import os
+from PIL import ImageGrab
 import time
-from glob import glob
-
 import win32con
 import win32gui
-from PIL import ImageGrab
-
-import config
-from dingtalk.utils import files
 
 hwnd_title = {}
 
@@ -65,12 +61,11 @@ def get_screenshot(window_pos):
         t2 = str(round(time.time() * 1000))
         t = str(t1) + '_' + str(t2)
         name = "Screenshot_" + str(t) + ".png"
+        screenshots_dir = "screenshots"
 
-        screenshot.save(os.sep.join([str(name)]))  # 保存截图
+        if not os.path.isdir(screenshots_dir):
+            os.mkdir(screenshots_dir)
 
-        dir1 = "./"
-        dir2 = "./screenshots/"
-        file1 = glob(dir1 + 'Screenshot*.png')
-        files.move(file1, dir2)
+        screenshot.save(os.path.join(screenshots_dir, os.sep.join([str(name)])))  # 保存截图
 
     return screenshot

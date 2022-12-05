@@ -2,17 +2,16 @@
 # GitHub: https://github.com/xyz8848
 # Copyright (c) 2022-2023 xyz8848. All rights reserved.
 
+from dingtalk.utils import window
+from dingtalk.utils.window import get_all_hwnd, hwnd_title
+import logging
 import time
-
 import win32api
 import win32con
 import win32gui
 
-from dingtalk.utils import auto_class, window
-from dingtalk.utils.window import get_all_hwnd, hwnd_title
 
-
-def is_open():
+def is_window_open():
     while True:
         # 查找所有窗口标题和句柄 StandardFrame
         win32gui.EnumWindows(get_all_hwnd, 0)
@@ -28,7 +27,7 @@ def is_open():
 
 def is_live_open(screenshot):
     if screenshot.getpixel((5, 5)) == (224, 237, 254):
-        print("检测到直播开启，正在检测是否已启动直播页面")
+        logging.info("检测到直播开启，正在检测是否已启动直播页面")
         return True
     else:
         return False
@@ -45,10 +44,8 @@ def open_live(dingtalk_main_window_handle, dingtalk_chat_window_handle):
     win32api.SetCursorPos((move_x, move_y))  # 鼠标挪到点击处
     win32api.mouse_event(win32con.MOUSEEVENTF_LEFTDOWN, 0, 0)  # 鼠标左键按下
     win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP, 0, 0)  # 鼠标左键抬起
-    print("启动完成，等待直播进入...")
+    print("[INFO] 启动完成，等待直播进入...")
     time.sleep(8)
-    on_update()
-
 
 # # Legacy
 # def open_live(dingtalk_main_window_handle, dingtalk_chat_window_handle):
@@ -78,18 +75,3 @@ def open_live(dingtalk_main_window_handle, dingtalk_chat_window_handle):
 #             on_update()
 #         else:
 #             print("打开失败，" + str(60) + "s后再次尝试...")
-
-
-def on_update():
-    var = 1
-    num = 0
-
-    # 循环检测签到
-    while var == 1:
-        # 检测签到间隔时间（单位：秒）
-        time.sleep(5)
-
-        # 统计检测次数
-        num = num + 1
-
-        auto_class.start(num)

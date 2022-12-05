@@ -1,6 +1,7 @@
 # @author: xyz8848
 # GitHub: https://github.com/xyz8848
 # Copyright (c) 2022-2023 xyz8848. All rights reserved.
+import logging
 
 import win32gui
 
@@ -15,11 +16,11 @@ def get_handle():
             continue
         if win32gui.GetClassName(handle) != "StandardFrame_DingTalk":  # 跳过其他窗口捕获主窗口
             continue
-        print("获取到钉钉窗口句柄：" + str(handle))
+        logging.info("获取到钉钉窗口句柄：" + str(handle))
         return handle
     try:
         if handle is None:
             exit(0)
     except:
-        print("请先打开钉钉窗口")
+        logging.error("请先打开钉钉窗口")
         exit(0)

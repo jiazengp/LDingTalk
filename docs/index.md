@@ -5,6 +5,7 @@
 ## 用户文档
 
 - [如何使用](user/how-to-use.md)
+- [注意事项](user/notice.md)
 - [常见问题](user/common_problem.md)
 
 ## 开发者文档
