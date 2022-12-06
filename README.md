@@ -1,18 +1,25 @@
 <div align="center">
 
-<h1>LDingTalk</h1>
+# LDingTalk
 
 [文档](docs/index.md) |
-[GitHub](https://github.com/xyz8848) |
+[GitHub](https://github.com/xyz8848/LDingTalk) |
+[Gitee](https://gitee.com/xyz8848/LDingTalk) |
 [LICENSE](LICENSE)
 
 [![GitHub Stars](https://img.shields.io/github/stars/xyz8848/LDingTalk)](https://github.com/xyz8848/LDingTalk/stargazers)
-[![GitHub Stars](https://img.shields.io/github/watchers/xyz8848/LDingTalk)](https://github.com/xyz8848/LDingTalk/watchers)
+[![GitHub Watchers](https://img.shields.io/github/watchers/xyz8848/LDingTalk)](https://github.com/xyz8848/LDingTalk/watchers)
 [![GitHub Forks](https://img.shields.io/github/forks/xyz8848/LDingTalk)](https://github.com/xyz8848/LDingTalk/network/members)
-[![Release Downloads](https://img.shields.io/github/downloads/xyz8848/LDingTalk/total)](https://github.com/xyz8848/LDingTalk/releases/latest)
-[![Release Version](https://img.shields.io/github/v/release/xyz8848/LDingTalk)](https://github.com/xyz8848/LDingTalk/releases/latest)
+[![GitHub Contributors](https://img.shields.io/github/contributors/xyz8848/LDingTalk)](https://github.com/xyz8848/LDingTalk/graphs/contributors)
 
-![Alt](https://repobeats.axiom.co/api/embed/23c36ec9d386a2cad477f3886403476d1a39faad.svg)
+[![Release Version](https://img.shields.io/github/v/release/xyz8848/LDingTalk)](https://github.com/xyz8848/LDingTalk/releases/latest)
+[![Repo Size](https://img.shields.io/github/repo-size/xyz8848/LDingTalk)](https://github.com/xyz8848/LDingTalk)
+[![Repo Top Lang](https://img.shields.io/github/languages/top/xyz8848/LDingTalk)](https://github.com/xyz8848/LDingTalk)
+
+[![GitHub Open Issues](https://img.shields.io/github/issues/xyz8848/LDingTalk)](https://github.com/xyz8848/LDingTalk/issues?q=is%3Aopen+is%3Aissue)
+[![GitHub Closed Issues](https://img.shields.io/github/issues-closed/xyz8848/LDingTalk)](https://github.com/xyz8848/LDingTalk/issues?q=is%3Aissue+is%3Aclosed)
+[![GitHub Open PRs](https://img.shields.io/github/issues-pr/xyz8848/LDingTalk)](https://github.com/xyz8848/LDingTalk/issues?q=is%3Aopen+is%3Apr)
+[![GitHub Closed PRs](https://img.shields.io/github/issues-pr-closed/xyz8848/LDingTalk)](https://github.com/xyz8848/LDingTalk/issues?q=is%3Apr+is%3Aclosed)
 
 </div>
 
