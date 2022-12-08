@@ -1,8 +1,6 @@
 # @author: xyz8848
-# GitHub: https://github.com/xyz8848
-# Copyright (c) 2022-2023 xyz8848. All rights reserved.
-import logging
-
+# GitHub: https://github.com/xyz8848/LDingTalk
+# Gitee: https://gitee.com/xyz8848/LDingTalk
 import win32gui
 
 from dingtalk.utils.window import hwnd_title, get_all_hwnd
@@ -16,11 +14,11 @@ def get_handle():
             continue
         if win32gui.GetClassName(handle) != "StandardFrame_DingTalk":  # 跳过其他窗口捕获主窗口
             continue
-        logging.info("获取到钉钉窗口句柄：" + str(handle))
+        print("获取到钉钉窗口句柄：" + str(handle))
         return handle
     try:
         if handle is None:
             exit(0)
     except:
-        logging.error("请先打开钉钉窗口")
+        print("请先打开钉钉窗口")
         exit(0)

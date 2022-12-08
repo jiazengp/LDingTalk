@@ -15,6 +15,7 @@
 [![Release Version](https://img.shields.io/github/v/release/xyz8848/LDingTalk)](https://github.com/xyz8848/LDingTalk/releases/latest)
 [![Repo Size](https://img.shields.io/github/repo-size/xyz8848/LDingTalk)](https://github.com/xyz8848/LDingTalk)
 [![Repo Top Lang](https://img.shields.io/github/languages/top/xyz8848/LDingTalk)](https://github.com/xyz8848/LDingTalk)
+[![GitHub](https://img.shields.io/github/license/xyz8848/LDingTalk)](https://github.com/xyz8848/LDingTalk/blob/master/LICENSE)
 
 [![GitHub Open Issues](https://img.shields.io/github/issues/xyz8848/LDingTalk)](https://github.com/xyz8848/LDingTalk/issues?q=is%3Aopen+is%3Aissue)
 [![GitHub Closed Issues](https://img.shields.io/github/issues-closed/xyz8848/LDingTalk)](https://github.com/xyz8848/LDingTalk/issues?q=is%3Aissue+is%3Aclosed)

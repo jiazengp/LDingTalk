@@ -1,14 +1,15 @@
 # @author: xyz8848
-# GitHub: https://github.com/xyz8848
-# Copyright (c) 2022-2023 xyz8848. All rights reserved.
-
-import config
+# GitHub: https://github.com/xyz8848/LDingTalk
+# Gitee: https://gitee.com/xyz8848/LDingTalk
 import datetime
 import os
-from PIL import ImageGrab
 import time
+
 import win32con
 import win32gui
+from PIL import ImageGrab
+
+import config
 
 hwnd_title = {}
 

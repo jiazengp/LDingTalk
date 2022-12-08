@@ -1,9 +1,9 @@
 # @author: xyz8848
-# GitHub: https://github.com/xyz8848
-# Copyright (c) 2022-2023 xyz8848. All rights reserved.
+# GitHub: https://github.com/xyz8848/LDingTalk
+# Gitee: https://gitee.com/xyz8848/LDingTalk
+import logging
 
 import dingtalk
-import logging
 
 name = "LDingTalk"
 author = "xyz8848"

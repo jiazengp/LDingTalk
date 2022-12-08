@@ -1,11 +1,10 @@
 # @author: xyz8848
-# GitHub: https://github.com/xyz8848
-# Copyright (c) 2022-2023 xyz8848. All rights reserved.
+# GitHub: https://github.com/xyz8848/LDingTalk
+# Gitee: https://gitee.com/xyz8848/LDingTalk
+import time
 
 import config
 from dingtalk.utils import auto_class, chat_window, live_window, main_window, window
-import logging
-import time
 
 
 def start():
@@ -42,7 +41,7 @@ def start():
 
                 auto_class.start(num)
         else:
-            logging.info("未检测到直播，60秒后进入下一轮检测")
+            print("未检测到直播，60秒后进入下一轮检测")
             restart()
     else:
         var = 1
