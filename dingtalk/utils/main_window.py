@@ -6,6 +6,7 @@ import win32gui
 from dingtalk.utils.window import hwnd_title, get_all_hwnd
 
 
+# 获取钉钉主窗口句柄
 def get_handle():
     # 查找所有窗口标题和句柄 StandardFrame_DingTalk
     win32gui.EnumWindows(get_all_hwnd, 0)

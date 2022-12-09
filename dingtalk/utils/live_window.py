@@ -11,6 +11,7 @@ from dingtalk.utils import window
 from dingtalk.utils.window import get_all_hwnd, hwnd_title
 
 
+# 检测直播窗口是否打开
 def is_window_open():
     while True:
         # 查找所有窗口标题和句柄 StandardFrame
@@ -25,6 +26,7 @@ def is_window_open():
             return is_opened
 
 
+# 检测直播是否开启
 def is_live_open(screenshot):
     if screenshot.getpixel((5, 5)) == (224, 237, 254):
         print("检测到直播开启，正在检测是否已启动直播页面")
@@ -33,7 +35,8 @@ def is_live_open(screenshot):
         return False
 
 
-def open_live(dingtalk_main_window_handle, dingtalk_chat_window_handle):
+# 打开直播窗口
+def open_window(dingtalk_main_window_handle, dingtalk_chat_window_handle):
     # 打开钉钉主窗口
     window.show_window(dingtalk_main_window_handle)
 
@@ -41,37 +44,8 @@ def open_live(dingtalk_main_window_handle, dingtalk_chat_window_handle):
     left, top, right, bottom = win32gui.GetWindowRect(dingtalk_chat_window_handle)
     move_x = left + 5
     move_y = top + 5
-    win32api.SetCursorPos((move_x, move_y))  # 鼠标挪到点击处
+    win32api.SetCursorPos((move_x, move_y))  # 移动鼠标
     win32api.mouse_event(win32con.MOUSEEVENTF_LEFTDOWN, 0, 0)  # 鼠标左键按下
     win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP, 0, 0)  # 鼠标左键抬起
     print("启动完成，等待直播进入...")
     time.sleep(8)
-
-# # Legacy
-# def open_live(dingtalk_main_window_handle, dingtalk_chat_window_handle):
-#     is_opened = is_open()
-#     if is_opened:
-#         print("直播窗口已打开，正在监控直播窗口变化")
-#         on_update()
-#     else:
-#         print("直播窗口未打开，正在尝试打开直播窗口")
-#
-#         # 打开钉钉主窗口
-#         window.show_window(dingtalk_main_window_handle)
-#
-#         # 模拟鼠标点击（打开钉钉直播）
-#         left, top, right, bottom = win32gui.GetWindowRect(dingtalk_chat_window_handle)
-#         move_x = left + 5
-#         move_y = top + 5
-#         win32api.SetCursorPos((move_x, move_y))  # 鼠标挪到点击处
-#         win32api.mouse_event(win32con.MOUSEEVENTF_LEFTDOWN, 0, 0)  # 鼠标左键按下
-#         win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP, 0, 0)  # 鼠标左键抬起
-#         print("启动完成，等待直播进入...")
-#         time.sleep(8)
-#         print("开始获取直播窗口...")
-#         is_opened_1 = is_open()
-#         if is_opened_1:
-#             print("直播窗口已打开，开始监控直播窗口变化")
-#             on_update()
-#         else:
-#             print("打开失败，" + str(60) + "s后再次尝试...")

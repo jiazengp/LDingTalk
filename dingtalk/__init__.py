@@ -26,22 +26,21 @@ def start():
 
         # 检测直播是否开启
         dingtalk_chat_box_screenshot = window.get_screenshot(dingtalk_chat_window_pos)  # 获取直播窗口截图
-        live_open = live_window.is_live_open(dingtalk_chat_box_screenshot)  # 传入截图进行检测
-        if live_open:
-            live_window.open_live(dingtalk_main_window_handle, dingtalk_chat_window_handle)  # 打开直播
+        is_live_open = live_window.is_live_open(dingtalk_chat_box_screenshot)  # 传入截图进行检测
+        if is_live_open:
+            live_window.open_window(dingtalk_main_window_handle, dingtalk_chat_window_handle)  # 打开直播
             var = 1
             num = 0
 
             while var == 1:
-                # 检测签到间隔时间（单位：秒）
-                time.sleep(5)
+                time.sleep(config.DingTalk.auto_check_in_delay_time)
 
                 # 统计检测次数
                 num = num + 1
 
                 auto_class.start(num)
         else:
-            print("未检测到直播，60秒后进入下一轮检测")
+            print("未检测到直播，" + str(config.DingTalk.check_is_live_open_delay_time) + "秒后进入下一轮检测")
             restart()
     else:
         var = 1
@@ -49,8 +48,7 @@ def start():
 
         # 循环检测签到
         while var == 1:
-            # 检测签到间隔时间（单位：秒）
-            time.sleep(5)
+            time.sleep(config.DingTalk.auto_check_in_delay_time)
 
             # 统计检测次数
             num = num + 1
@@ -59,5 +57,5 @@ def start():
 
 
 def restart():
-    time.sleep(60)
+    time.sleep(config.DingTalk.check_is_live_open_delay_time)
     start()
