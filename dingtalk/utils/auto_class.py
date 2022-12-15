@@ -1,17 +1,18 @@
 # @author: xyz8848
 # GitHub: https://github.com/xyz8848/LDingTalk
 # Gitee: https://gitee.com/xyz8848/LDingTalk
+import os.path
 import time
 
 import pyautogui
 
-import config
 import dingtalk
 from dingtalk.utils import window
+from main import config, base_dir
 
 
 def start(num):
-    locate = pyautogui.locateOnScreen("dingtalk/res/end.png", grayscale=True, confidence=.9)
+    locate = pyautogui.locateOnScreen(os.path.join(base_dir, "dingtalk/res/end.png"), grayscale=True, confidence=.9)
     if locate is None:
         auto_check_in(num)
     else:
@@ -26,8 +27,8 @@ def start(num):
 
 # 自动签到
 def auto_check_in(num):
-    if config.DingTalk.auto_check_in:
-        locate = pyautogui.locateOnScreen("dingtalk/res/check_in.png", grayscale=True, confidence=.9)
+    if config["dingtalk"]["auto_check_in"]:
+        locate = pyautogui.locateOnScreen(os.path.join(base_dir, "dingtalk/res/check_in.png"), grayscale=True, confidence=.9)
         if locate is None:
             print("未检测到签到（第" + str(num) + "次）")
         else:

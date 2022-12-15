@@ -9,7 +9,7 @@ import win32con
 import win32gui
 from PIL import ImageGrab
 
-import config
+from main import config
 
 hwnd_title = {}
 
@@ -56,17 +56,15 @@ def get_window_pos(handle):
 
 def get_screenshot(window_pos):
     screenshot = ImageGrab.grab(window_pos)  # 截图
+    screenshot_name = "Screenshot_" + str(datetime.date.today()) + '_' + str(round(time.time() * 1000)) + ".png"
+    screenshots_dir = config["dingtalk"]["screenshots_dir"]
 
-    if config.DingTalk.save_screenshot:
-        t1 = str(datetime.date.today())
-        t2 = str(round(time.time() * 1000))
-        t = str(t1) + '_' + str(t2)
-        name = "Screenshot_" + str(t) + ".png"
-        screenshots_dir = "screenshots"
+    if config["dingtalk"]["save_screenshot"]:
+        path = os.path.join(screenshots_dir, os.sep.join([str(screenshot_name)]))
 
         if not os.path.isdir(screenshots_dir):
             os.mkdir(screenshots_dir)
 
-        screenshot.save(os.path.join(screenshots_dir, os.sep.join([str(name)])))  # 保存截图
+        screenshot.save(path)  # 保存截图
 
     return screenshot

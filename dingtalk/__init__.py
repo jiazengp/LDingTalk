@@ -3,12 +3,12 @@
 # Gitee: https://gitee.com/xyz8848/LDingTalk
 import time
 
-import config
 from dingtalk.utils import auto_class, chat_window, live_window, main_window, window
+from main import config
 
 
 def start():
-    if config.DingTalk.auto_class:
+    if config["dingtalk"]["auto_class"]:
         # 获取钉钉主窗口句柄
         dingtalk_main_window_handle = main_window.get_handle()
 
@@ -33,14 +33,13 @@ def start():
             num = 0
 
             while var == 1:
-                time.sleep(config.DingTalk.auto_check_in_delay_time)
+                time.sleep(config["dingtalk"]["auto_check_in_delay_time"])
 
                 # 统计检测次数
                 num = num + 1
 
                 auto_class.start(num)
         else:
-            print("未检测到直播，" + str(config.DingTalk.check_is_live_open_delay_time) + "秒后进入下一轮检测")
             restart()
     else:
         var = 1
@@ -48,7 +47,7 @@ def start():
 
         # 循环检测签到
         while var == 1:
-            time.sleep(config.DingTalk.auto_check_in_delay_time)
+            time.sleep(config["dingtalk"]["auto_check_in_delay_time"])
 
             # 统计检测次数
             num = num + 1
@@ -57,5 +56,7 @@ def start():
 
 
 def restart():
-    time.sleep(config.DingTalk.check_is_live_open_delay_time)
+    delay_time = config["dingtalk"]["check_is_live_open_delay_time"]
+    print("未检测到直播，" + str(delay_time) + "秒后进入下一轮检测")
+    time.sleep(delay_time)
     start()
