@@ -18,7 +18,19 @@ jobs:
 
       - name: Setup requirements
         run: |
-          pip install -r requirements.txt
+          pip install MouseInfo
+          pip install numpy
+          pip install opencv-python
+          pip install Pillow
+          pip install PyAutoGUI
+          pip install PyGetWindow
+          pip install PyMsgBox
+          pip install pyperclip
+          pip install PyRect
+          pip install PyScreeze
+          pip install pytweening
+          pip install pywin32
+          pip install PyYAML
           pip install pyinstaller
 
       - name: Build LDingTalk
