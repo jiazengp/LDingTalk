@@ -3,7 +3,7 @@
 # Gitee: https://gitee.com/xyz8848/LDingTalk
 import time
 
-from dingtalk.utils import auto_class, chat_window, live_window, main_window, window
+from dingtalk.utils import auto_class, chat_window, live_window, main_window, window, auto_check_in
 from main import config
 
 
@@ -52,11 +52,11 @@ def start():
             # 统计检测次数
             num = num + 1
 
-            auto_class.auto_check_in(num)
+            auto_check_in.check(num)
 
 
 def restart():
-    delay_time = config["dingtalk"]["check_is_live_open_delay_time"]
-    print("未检测到直播，" + str(delay_time) + "秒后进入下一轮检测")
-    time.sleep(delay_time)
+    auto_class_delay_time = config["dingtalk"]["auto_class_delay_time"]
+    print("未检测到直播，" + str(auto_class_delay_time) + "秒后进入下一轮检测")
+    time.sleep(auto_class_delay_time)
     start()

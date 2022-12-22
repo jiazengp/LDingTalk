@@ -10,4 +10,3 @@
 ## 开发者文档
 
 - [依赖](dev/requirements.md)
-- [常用坐标点](dev/pos.md)

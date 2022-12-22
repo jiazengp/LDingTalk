@@ -10,7 +10,7 @@ import dingtalk
 
 name = "LDingTalk"
 author = "xyz8848"
-version = "v2.0.0"
+version = "v2.0.1"
 github = "https://github.com/xyz8848/LDingTalk"
 gitee = "https://gitee.com/xyz8848/LDingTalk"
 
