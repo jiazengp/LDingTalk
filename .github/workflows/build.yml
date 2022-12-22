@@ -2,32 +2,33 @@ name: build
 
 on:
   workflow_dispatch:
-    jobs:
-      build:
-        runs-on: ubuntu-latest
 
-        steps:
-          - name: Checkout repository
-            uses: actions/checkout@v2
+jobs:
+  build:
+    runs-on: ubuntu-latest
 
-          - name: Setup python
-            uses: actions/setup-python@v2
-            with:
-              python-version: 3.x
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
 
-          - name: Setup requirements
-            run: |
-              pip install -r requirements.txt
-              pip install pyinstaller
+      - name: Setup python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.x
 
-          - name: Build LDingTalk
-            run: pyinstaller -F main.py
+      - name: Setup requirements
+        run: |
+          pip install -r requirements.txt
+          pip install pyinstaller
 
-          - name: Rename
-            run: mv dist/main.exe LDingTalk.exe
+      - name: Build LDingTalk
+        run: pyinstaller -F main.py
 
-          - name: Upload
-            uses: actions/upload-artifact@v2
-            with:
-              name: LDingTalk
-              path: LDingTalk.exe
+      - name: Rename
+        run: mv dist/main.exe LDingTalk.exe
+
+      - name: Upload
+        uses: actions/upload-artifact@v2
+        with:
+          name: LDingTalk
+          path: LDingTalk.exe

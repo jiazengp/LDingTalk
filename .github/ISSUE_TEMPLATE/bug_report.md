@@ -1,6 +1,6 @@
 ---
 name: 问题反馈
-about:
+about: 问题反馈
 title:
 labels: bug
 assignees:
