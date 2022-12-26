@@ -52,19 +52,3 @@ def get_window_pos(handle):
     x_start, y_start, x_end, y_end = win32gui.GetWindowRect(handle)
     window_pos = (x_start, y_start, x_end, y_end)
     return window_pos
-
-
-def get_screenshot(window_pos):
-    screenshot = ImageGrab.grab(window_pos)  # 截图
-    screenshot_name = "Screenshot_" + str(datetime.date.today()) + '_' + str(round(time.time() * 1000)) + ".png"
-    screenshots_dir = config["dingtalk"]["screenshots_dir"]
-
-    if config["dingtalk"]["save_screenshot"]:
-        path = os.path.join(screenshots_dir, os.sep.join([str(screenshot_name)]))
-
-        if not os.path.isdir(screenshots_dir):
-            os.mkdir(screenshots_dir)
-
-        screenshot.save(path)  # 保存截图
-
-    return screenshot

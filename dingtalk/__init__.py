@@ -1,14 +1,18 @@
 # @author: xyz8848
 # GitHub: https://github.com/xyz8848/LDingTalk
 # Gitee: https://gitee.com/xyz8848/LDingTalk
+import os
 import time
 
+import pyautogui
+from PIL import ImageGrab
+
 from dingtalk.utils import auto_class, chat_window, live_window, main_window, window, auto_check_in
-from main import config
+from main import config, base_dir
 
 
 def start():
-    if config["dingtalk"]["auto_class"]:
+    while config["dingtalk"]["auto_class"]["enable"]:
         # 获取钉钉主窗口句柄
         dingtalk_main_window_handle = main_window.get_handle()
 
@@ -25,38 +29,42 @@ def start():
         dingtalk_chat_window_pos = window.get_window_pos(dingtalk_chat_window_handle)
 
         # 检测直播是否开启
-        dingtalk_chat_box_screenshot = window.get_screenshot(dingtalk_chat_window_pos)  # 获取直播窗口截图
+        dingtalk_chat_box_screenshot = ImageGrab.grab(dingtalk_chat_window_pos)  # 获取直播窗口截图
         is_live_open = live_window.is_live_open(dingtalk_chat_box_screenshot)  # 传入截图进行检测
         if is_live_open:
             live_window.open_window(dingtalk_main_window_handle, dingtalk_chat_window_handle)  # 打开直播
-            var = 1
+
             num = 0
 
-            while var == 1:
-                time.sleep(config["dingtalk"]["auto_check_in_delay_time"])
+            while True:
+                time.sleep(config["dingtalk"]["auto_class"]["check_end_delay_time"])
 
                 # 统计检测次数
                 num = num + 1
 
-                auto_class.start(num)
+                locate = pyautogui.locateOnScreen(os.path.join(base_dir, "dingtalk/res/end.png"), grayscale=True,
+                                                  confidence=.9)
+                if locate is None:
+                    auto_check_in.check(num)
+                else:
+                    x, y, width, height = locate
+                    print("检测到直播结束（第" + str(num) + "次）")
+                    pyautogui.click(x + width - 15, y + height / 2, button="left")
+                    break
         else:
-            restart()
-    else:
-        var = 1
+            auto_class_delay_time = config["dingtalk"]["auto_class"]["delay_time"]
+            print("未检测到直播，" + str(auto_class_delay_time) + "秒后进入下一轮检测")
+            time.sleep(auto_class_delay_time)
+
+    while config["dingtalk"]["auto_check_in"]["enable"]:
+
         num = 0
 
         # 循环检测签到
-        while var == 1:
-            time.sleep(config["dingtalk"]["auto_check_in_delay_time"])
+        while True:
+            time.sleep(config["dingtalk"]["auto_check_in"]["delay_time"])
 
             # 统计检测次数
             num = num + 1
 
             auto_check_in.check(num)
-
-
-def restart():
-    auto_class_delay_time = config["dingtalk"]["auto_class_delay_time"]
-    print("未检测到直播，" + str(auto_class_delay_time) + "秒后进入下一轮检测")
-    time.sleep(auto_class_delay_time)
-    start()

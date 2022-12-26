@@ -11,6 +11,7 @@
 [![GitHub Watchers](https://img.shields.io/github/watchers/xyz8848/LDingTalk)](https://github.com/xyz8848/LDingTalk/watchers)
 [![GitHub Forks](https://img.shields.io/github/forks/xyz8848/LDingTalk)](https://github.com/xyz8848/LDingTalk/network/members)
 [![GitHub Contributors](https://img.shields.io/github/contributors/xyz8848/LDingTalk)](https://github.com/xyz8848/LDingTalk/graphs/contributors)
+[![GitHub Downloads](https://img.shields.io/github/downloads/xyz8848/LDingTalk/total)](https://github.com/xyz8848/LDingTalk/releases/latest)
 
 [![Release Version](https://img.shields.io/github/v/release/xyz8848/LDingTalk)](https://github.com/xyz8848/LDingTalk/releases/latest)
 [![Repo Size](https://img.shields.io/github/repo-size/xyz8848/LDingTalk)](https://github.com/xyz8848/LDingTalk)
@@ -27,6 +28,6 @@
 ## 功能
 
 - [x] 自动进直播
-- [x] 自动签到并截图
-- [x] 自动关闭统计界面并截图
+- [x] 自动签到
+- [x] 自动关闭统计界面
 - [x] 所有功能可配置

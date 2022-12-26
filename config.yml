@@ -1,7 +1,9 @@
 dingtalk:
-  auto_check_in: true  # 自动签到
-  auto_check_in_delay_time: 5  # 自动签到间隔时间（单位：秒）
-  auto_class: true  # 自动上课 & 自动下课
-  auto_class_delay_time: 60  # 检测直播是否开启的间隔时间（单位：秒）
-  save_screenshot: true  # 保存截图
-  screenshots_dir: screenshots  # 保存截图的路径（支持绝对路径和相对路径）
+  auto_check_in:
+    enable: true # 开启自动签到
+    delay_time: 5 # 自动签到间隔时间（单位：秒）
+  auto_class:
+    enable: true # 开启 自动上课 & 自动下课
+    check_open_delay_time: 60 # 检测直播是否开启的间隔时间（单位：秒）
+    check_end_delay_time: 5 # 检测直播是否关闭的间隔时间（单位：秒）
+  get_latest_version: true  # 检测最新版本
