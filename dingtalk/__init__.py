@@ -7,7 +7,7 @@ import time
 import pyautogui
 from PIL import ImageGrab
 
-from dingtalk.utils import chat_window, live_window, main_window, window, auto_check_in
+from dingtalk.utils import auto_class, chat_window, live_window, main_window, window, auto_check_in
 from main import config, base_dir
 
 
