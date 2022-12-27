@@ -52,7 +52,7 @@ def start():
                     pyautogui.click(x + width - 15, y + height / 2, button="left")
                     break
         else:
-            auto_class_delay_time = config["dingtalk"]["auto_class"]["delay_time"]
+            auto_class_delay_time = config["dingtalk"]["auto_class"]["check_open_delay_time"]
             print("未检测到直播，" + str(auto_class_delay_time) + "秒后进入下一轮检测")
             time.sleep(auto_class_delay_time)
 
